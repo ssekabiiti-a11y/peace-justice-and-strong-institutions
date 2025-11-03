@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Page</title>
+  <style>
+    /* CSS Variables for consistent theming */
+    :root {
+      --primary-color: #004080;
+      --secondary-color: #0059b3;
+      --accent-color: #4a90e2;
+      --light-bg: #f4f8fb;
+      --text-color: #333;
+      --white: #ffffff;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --border-radius: 10px;
+      --transition: all 0.3s ease;
+    }
+
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: var(--secondary-color);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: var(--white);
+      margin: 3px 0;
+      transition: var(--transition);
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* Section Grid Layout */
+    .sections-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .section-card {
+      background-color: var(--white);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .section-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-card h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-color);
+    }
+
+    .section-card ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .section-card li {
+      margin-bottom: 0.5rem;
+    }
+
+    .image-container {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    .section-image {
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (min-width: 768px) {
+      header h1 {
+        font-size: 2.8rem;
+      }
+      
+      .sections-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .section-card:last-child {
+        grid-column: span 2;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .sections-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .section-card:last-child {
+        grid-column: auto;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--secondary-color);
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 1rem;
+        text-align: center;
+        width: 100%;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Peace, Justice & Strong Institutions</h1>
+    <p>Building a just, stable, and prosperous society for all</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="HOME PAGE.html">HOME PAGE</a></li>
+        <li><a href="ABOUT PAGE.html">ABOUT PAGE</a></li>
+        <li><a href="CONTACT PAGE.html">CONTACT PAGE</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <div class="sections-grid">
+      <!-- Peace Section -->
+      <section class="section-card">
+        <article>
+          <h2>Peace</h2>
+          <p>
+            Peace is a calm and happy feeling when people get along well with each other.
+            When everyone in a place—a school, a town, or even the whole world—tries to be:
+          </p>
+          <ul>
+            <li>Kind</li>
+            <li>Respectful</li>
+            <li>Fair</li>
+          </ul>
+          <div class="image-container">
+            <img src="images/images.jpeg" alt="Peace Image" class="section-image" />
+          </div>
+          <p>
+            Peace isn't just about not fighting—it's about working together,
+            listening to each other, and making sure everyone feels safe and respected.
+          </p>
+        </article>
+      </section>
+
+      <!-- Justice Section -->
+      <section class="section-card">
+        <article>
+          <h2>Justice</h2>
+          <p>
+            Justice means fair rules that make sure everyone is treated equally. It's when people are given what they deserve, no matter who they are.
+            For example, if you do something wrong, justice gives you a fair chance to fix it—not just punishment without understanding.
+          </p>
+          <p>
+            Justice is about honesty, respecting others' rights, and ensuring everyone has a fair chance to succeed.
+            It's like when a teacher gives everyone a chance to answer or a doctor treats all patients with care and respect.
+          </p>
+          <div class="image-container">
+            <img src="images/images (3).jpeg" alt="Justice Image" class="section-image" />
+          </div>
+        </article>
+      </section>
+
+      <!-- Strong Institutions Section -->
+      <section class="section-card">
+        <article>
+          <h2>Strong Institutions</h2>
+          <p>
+            Strong institutions are like the "rules" and "leaders" that help a community run well. They ensure things are fair and safe.
+            For example, the government is a strong institution because it helps make laws, protect people, and treat everyone fairly.
+          </p>
+          <p>
+            Schools are also strong institutions. They teach students, help them grow, and make sure everyone learns equally.
+          </p>
+          <p>
+            Police and courts are strong institutions too. They help keep people safe and make sure rules are followed.
+            Strong institutions help create a safe, fair, and cooperative society for all.
+          </p>
+          <div class="image-container">
+            <img src="images/images (4).jpeg" alt="Institutions Image" class="section-image" />
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Justice, Peace and Strong Institutions. Our mission is to build a just, stable, and prosperous society where all individuals can live with dignity, freedom, and security.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

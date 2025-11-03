@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT PAGE</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #f4f4f9, #eaf3ff);
+      color: #333;
+    }
+
+    /* Navigation Menu */
+    nav {
+      background-color: #003366;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 15px;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #0059b3;
+      transform: scale(1.05);
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #003366;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    a.email {
+      color: #0059b3;
+      text-decoration: none;
+    }
+
+    a.email:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact Form */
+    form {
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    form label {
+      font-weight: bold;
+    }
+
+    form input[type="text"],
+    form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    form input[type="submit"] {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #0059b3;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      form {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        margin: 8px 0;
+        width: 80%;
+        text-align: center;
+      }
+
+      .container {
+        padding: 15px;
+      }
+
+      form input[type="text"],
+      form input[type="password"] {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="HOME PAGE.html">HOME PAGE</a>
+    <a href="ABOUT PAGE.html">ABOUT PAGE</a>
+    <a href="CONTACT PAGE.html">CONTACT PAGE</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Contact Information</h1>
+    <p><strong>Name:</strong> Anthony</p>
+    <p><strong>Title:</strong> Project Coordinator</p>
+    <p><strong>Organization:</strong> Peace, Justice and Strong Institutions Initiative</p>
+    <p><strong>Email:</strong> 
+      <a href="mailto:Anthony@peacejusticandstronginstitutionsinitiative.org" class="email">
+        Anthony@peacejusticandstronginstitutionsinitiative.org
+      </a>
+    </p>
+    <p><strong>Phone:</strong> 0701512170</p>
+    <p><strong>Address:</strong> Plot 145, Wakiso, Uganda</p>
+
+    <h2>Social Media Links</h2>
+    <p>Facebook: @peacejusticandstronginstitutionsinitiative</p>
+    <p>Twitter: @peacejusticandstronginsti</p>
+    <p>Instagram: @peacejusticandstronginst</p>
+
+    <!-- Form -->
+    <h2>Get in Touch</h2>
+    <form>
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username" placeholder="Enter your name" required><br>
+
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" placeholder="Enter password" required><br>
+
+      <label>Gender:</label><br>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Justice, Peace and Strong Institutions. Building a just, stable, and prosperous society where all individuals live with dignity, freedom, and security.</p>
+  </footer>
+
+</body>
+</html>
